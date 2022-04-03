@@ -1,10 +1,16 @@
 <mat-toolbar color="primary">
-  E-commerce Website 
-
+  <button mat-button style="font-size: large;" (click)="home()">
+    E-commerce Website 
+  </button>
+  
   <ng-container *ngIf="authService.currentUser$ | async as user ; else loginButton">
-    <button mat-button style="margin-left: 63%;">
+    <button mat-button style="margin-left: 58%;">
       <mat-icon>account_circle</mat-icon>
         {{user.email}} 
+    </button>
+    <button mat-button routerLink="cart">
+      <mat-icon>shopping_cart</mat-icon>
+      Cart
     </button>
     <button mat-button routerLink="login" style="cursor :pointer;" (click)="logout()">
       <mat-icon>logout</mat-icon>

@@ -1,3 +1,4 @@
+import { BuiltinTypeName } from '@angular/compiler';
 import { Component, OnInit ,Input, EventEmitter, Output} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
@@ -11,32 +12,29 @@ export class CartComponent implements OnInit {
 
   message:any[] = [];
   arr :any;
+  total :number=0;
   constructor(private cartData: CartService) {
     
    }
 
   ngOnInit(): void {
-    this.message = this.cartData.arr;
-    console.log(this.cartData.arr);
-  //  this.arr =
-  //  this.cartData.pData$
-  //   .subscribe(
-  //     (message:any) =>{
-  //       if(message){
-  //         //converting Object into Array 
-  //         console.log('cart data :\n'+message);
-  //       }else if(!message){
-  //         console.log('NO DATA');
-  //       }
-  //     }
-  //   );
-  
+      this.message = this.cartData.arr;
+      console.log(this.cartData.arr);
+
+      console.log(this.total +=this.message[4]);
   }
 
-  incr()
-  {
-    console.log(this.message[5]);
-  }
+  // incr(num:number)
+  // {
+  //   console.log(num);
+  //   return num+=1;
+  // }
+
+  // decr(num:number)
+  // {
+  //   console.log(num);
+  //   return num-=1;
+  // }
 
 
 }

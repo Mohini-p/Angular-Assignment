@@ -27,6 +27,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ProductService } from '../app/services/product.service';
 import { CartComponent } from './component/cart/cart.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { OrderComponent } from './component/order/order.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    CartComponent
+    CartComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
