@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-ecomm-c8db7": {
+      "hosting": {
+        "angular-ecomm": [
+          "angular-ecomm-c8db7"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-ecomm-c8db7"
+  }
+}

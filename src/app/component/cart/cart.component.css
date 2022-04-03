@@ -1,0 +1,14 @@
+.container{
+    display:flex;
+    float:right;
+    order: 2;
+}
+
+.content{
+    padding: 16px;
+}
+
+.designcard{
+    background-color: rgb(16, 100, 121);
+    /* height: 350px; */
+}

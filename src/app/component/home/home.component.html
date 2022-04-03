@@ -1,0 +1,21 @@
+<h1 *ngIf="user$ | async as user ">
+    Welcome to E-commerce site , {{user.email}}!
+</h1>
+<div class="content"> 
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div *ngFor = 'let doc of product' fxFlex="50%" fxFlexOrder="2" fxFlex.xs="100%" fxFlex.sm="33%"  >
+            <mat-card class="designcard">
+                <mat-card-title>{{doc.pname}}</mat-card-title><hr/>
+                <mat-card-subtitle name="pdesc">{{doc.pdesc}}</mat-card-subtitle>
+                <mat-card-subtitle name="pprice">{{doc.pprice}}/- Only</mat-card-subtitle>
+                <mat-card-content >
+                    <img mat-card-lg-image name="pimg" src="{{doc.pimg}}"/>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="accent" (click)="getProductID(doc,qty)">Add to Cart</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
+

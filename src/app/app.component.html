@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  E-commerce Website 
+
+  <ng-container *ngIf="authService.currentUser$ | async as user ; else loginButton">
+    <button mat-button style="margin-left: 63%;">
+      <mat-icon>account_circle</mat-icon>
+        {{user.email}} 
+    </button>
+    <button mat-button routerLink="login" style="cursor :pointer;" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <sup style="font-size:medium;margin-left: 2px;">Logout</sup>
+    </button>
+  </ng-container>
+
+  <ng-template #loginButton>
+    <button mat-button routerLink="login" style="cursor :pointer;">
+      <mat-icon>login</mat-icon>
+      <sup style="font-size:medium;margin-left: 2px;">Login</sup>
+    </button>
+  </ng-template>
+</mat-toolbar>
+
+<!-- routing  -->
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
