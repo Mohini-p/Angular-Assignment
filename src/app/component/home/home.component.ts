@@ -62,11 +62,11 @@ export class HomeComponent implements OnInit {
       return prodataarr;
     });
     //prints data on btn click
-    console.log(arr);
+    // console.log(arr);
     window.alert(arr[1]+" added to cart!");
     // this.router.navigate(['/cart']);
     //sending the data to cart
-    this.pCartData.sendProductData(arr,qty);
+    this.pCartData.sendProductData(pdata,qty);
     return pdata;
   }
 }

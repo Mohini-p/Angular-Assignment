@@ -17,8 +17,8 @@ export class CartService {
   sendProductData(message:any,qty:number){
     this.productData.next(message);
 
-    this.arr.push({message,quantity : qty});
-    console.log(this.arr);
+    this.arr.push({id : message.id,pname:message.pname,pdesc: message.pdesc,pimg :message.pimg,pprice:message.pprice,totalqty:message.pqty, quantity : qty});
+    console.log(message);
   }
   //observable end
 }

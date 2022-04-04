@@ -5,26 +5,25 @@
     <div fxLayout="column" fxLayoutGap="16px grid">
         <div *ngFor = 'let doc of message' fxFlex="100%" fxFlexOrder="1" fxFlex.xs="100%" fxFlex.sm="33%"  >
             <mat-card class="designcard">
-                <mat-card-title>{{doc.message[1]}}</mat-card-title><hr/>
+                <mat-card-title>{{doc.pname}}({{doc.pprice}} Rs.)</mat-card-title><hr/>
                 <!-- <mat-card-subtitle name="pprice">Price : {{doc.message[4]}}/- Only</mat-card-subtitle> -->
                 <mat-card-content >
-                    <img mat-card-lg-image name="pimg" src="{{doc.message[3]}}"/>
+                    <img mat-card-lg-image name="pimg" src="{{doc.pimg}}"/>
                 </mat-card-content>
                 <mat-card-actions>
-                    <!-- <button mat-mini-fab color="warn" id="decr" (click)='decr(doc.quantity)'>-</button> -->
-                    <button mat-raised-button color="accent">{{doc.message[4]}}</button>
-                    <button mat-mini-fab color="primary"> * </button>
-                    <button mat-raised-button color="accent" id="btn">{{doc.quantity}}</button>
-                    <button mat-mini-fab color="primary">=</button>
-                    <button mat-raised-button color="warn" style="float: initial;">{{doc.quantity*doc.message[4]}}</button>
-                    <button mat-mini-fab color="warn" style="float: right;">
+                    <button mat-mini-fab color="primary" (click)="decr(doc.id)">-</button>
+                    <button mat-raised-button color="accent" id="btn" >{{doc.quantity}}</button>
+                    <button mat-mini-fab color="primary" (click)="incr(doc.id)">+</button>
+                    <button mat-raised-button color="warn" style="float:right;">Total : {{doc.quantity*doc.pprice}}</button>
+                    <button mat-mini-fab color="warn" style="float: right;" (click)="deleteProduct(doc.id)">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </mat-card-actions>
             </mat-card>
         </div>
     </div>
-    <div style="margin-top:2% ;">
-        <button mat-raised-button color="primary" style="justify-content: center;" routerLink="/order">Place Order</button>
+    <div style="margin-top:2%;">
+        <button mat-raised-button color="warn" style="margin-right: 2%;">Grand Total : {{total}}</button>
+        <button mat-raised-button color="primary" style="justify-content: center;" (click)="placeorder()">Place Order</button>
     </div>
 </div>

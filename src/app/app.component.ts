@@ -17,11 +17,11 @@ export class AppComponent {
 
   logout(){
     this.authService.logout().subscribe(()=>{
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     });
   }
 
   home(){
-    this.router.navigate(['home']);
+    this.router.navigate(['/home']);
   }
 }
